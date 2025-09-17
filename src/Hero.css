@@ -1,4 +1,4 @@
-g.hero-section {
+.hero-section {
   width: 100%;
   height: 90vh; /* adjust as needed */
   background-size: cover;
@@ -9,7 +9,7 @@ g.hero-section {
 }
 /* Colors of both transparent box and the tex */
 .hero-overlay {
-  background: rgba(0, 183, 255, 0.5); /* transparent black box */
+  background: rgba(0, 0, 0, 0.5); /* transparent black box */
   color: #ffffff;
   padding: 30px 40px;
   border-radius: 10px;
