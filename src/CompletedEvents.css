@@ -1,13 +1,13 @@
 .completed-events {
   padding: 3rem 0;
-  color: #ff0000;
+  color: #ffffff;
 }
 
 .events-title {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #ff0000;
+  color: #ffffff;
 }
 
 /* Grid layout */
@@ -19,10 +19,10 @@
 
 /* Card */
 .event-card {
-  background: #ff0000;
+  background: #f0efef;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(99, 98, 98, 0.35);
+  box-shadow: 0 6px 20px rgba(83, 81, 81, 0.35);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -30,7 +30,7 @@
 
 .event-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(107, 107, 107, 0.45);
+  box-shadow: 0 10px 28px rgba(94, 92, 92, 0.45);
 }
 
 /* Image */
@@ -43,7 +43,7 @@
 /* Content */
 .event-content {
   padding: 1rem 1rem 1.25rem;
-  color: #ff0000;
+  color: #7e7b7b;
   flex: 1;
 }
 
@@ -98,7 +98,7 @@
 /* Light theme overrides */
 @media (prefers-color-scheme: light) {
   .events-title {
-    color: #0400ff;
+    color: #00ff40;
   }
   .event-card {
     background: #000000;
