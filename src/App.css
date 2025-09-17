@@ -1,0 +1,258 @@
+/* App.css - header & navigation styles (dark theme by default) */
+:root {
+  --bg-color : #1a1a1a;
+  --text-color : #fff;
+  --card-bg : #ffffff;
+  --button-bg: #646cff;
+  --button-text: #fff; 
+}
+.light-mode {
+  --bg-color : #f9f9f9;
+  --text-color : #213547;
+  --card-bg : #000000;
+  --button-bg: #535bf2;
+  --button-text: #fff; 
+}
+body, .dark-mode, .light-mode{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.highlight-card{
+  background-color: var(--card-bg);
+}
+
+.highlight-button{
+  background-color: var(--card-bg);
+  color: var(--button-text);
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  position: relative;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-logo {
+  width: 52px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.app-title {
+  font-size: 1.6rem;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* nav */
+.app-nav {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.app-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.5rem;
+}
+
+.app-nav a:hover {
+  color: #646cff;
+}
+
+/* dropdown wrapper - contains both button and submenu (so hover stays while moving into submenu) */
+.dropdown {
+  position: relative;
+}
+
+/* drop button */
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* arrow element */
+.dropbtn .arrow {
+  display: inline-block;
+  margin-left: 0.4rem;
+  transition: transform 0.18s ease;
+}
+
+/* we render a glyph via pseudo-element */
+.dropbtn .arrow::before {
+  content: "▾";
+  display: inline-block;
+  line-height: 1;
+  transform-origin: center;
+  transition: transform 0.18s ease;
+}
+
+/* submenu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;                 /* directly attached to parent (no gap) to avoid hover flicker */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  z-index: 40;
+  padding: 0.25rem 0;
+}
+
+/* submenu links */
+.dropdown-content a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  text-align: center;
+}
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+/* ---- Desktop Hover behavior ----
+   keep submenu visible when hovering parent OR the submenu itself
+*/
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+/* arrow flips on hover (desktop) */
+.dropdown:hover .dropbtn .arrow::before {
+  transform: rotate(180deg);
+}
+
+/* hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  width: 34px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #646cff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* responsive: mobile menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .app-nav {
+    display: none; /* hidden by default on mobile */
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    z-index: 40;
+  }
+
+  .app-nav.open {
+    display: flex;
+  }
+
+  /* mobile: dropdowns show their content as stacked links */
+  .app-nav .dropdown-content {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    min-width: unset;
+    padding: 0;
+  }
+
+  .app-nav .dropdown-content a {
+    padding: 0.5rem 0;
+    color: #fff;
+    text-align: left;
+  }
+
+  .app-nav a,
+  .dropbtn {
+    padding: 0.6rem 0;
+  }
+
+  /* mobile: when the dropdown has the "open" class, force show submenu */
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  /* mobile: flip arrow when the dropdown has the open class */
+  .dropdown.open .dropbtn .arrow::before {
+    transform: rotate(180deg);
+  }
+}
+
+/* light theme overrides */
+@media (prefers-color-scheme: light) {
+  .app-title {
+    color: #213547;
+  }
+  .app-nav a,
+  .dropbtn {
+    color: #213547;
+  }
+  .dropdown-content {
+    background-color: #f9f9f9;
+  }
+  .dropdown-content a {
+    color: #213547;
+  }
+  .dropdown-content a:hover {
+    background-color: #e0e0e0;
+  }
+}
