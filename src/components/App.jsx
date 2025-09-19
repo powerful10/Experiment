@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import logo from "./assets/logo.jpg"; // keep your logo path
 import "./App.css";
-import Hero from "./Hero";
-import Highlights from "./Highlights";
+import Hero from "./Hero.jsx";
+import Highlights from "./Highlights.jsx";
 import CompletedEvents from "./CompletedEvents.jsx";
 import Volunteering from "./Volunteering.jsx";
 import Footer from "./Footer.jsx";
