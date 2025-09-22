@@ -31,6 +31,8 @@
 }
 .below-hero{
     font-size: 1.2rem;
-    color: black;
+    color: rgb(78, 22, 50);
     font-family: 'Poppins', sans-serif;
+    background-color: aquamarine;
+    bottom: 25px;
 }
