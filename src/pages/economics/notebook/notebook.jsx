@@ -16,6 +16,7 @@ function Articles() {
         <h1 className="lower-title">AS-Level Microeconomics</h1>
       </div>
     </section>
+    <section className="card">this is card</section>
     </div>
   );
 }
