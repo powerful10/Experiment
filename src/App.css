@@ -8,14 +8,17 @@
 }
 .light-mode {
   --bg-color : #f9f9f9;
-  --text-color : #213547;
+  --text-color : #ffffff;
   --card-bg : #000000;
-  --button-bg: #535bf2;
+  --button-bg: #ffffff;
   --button-text: #fff; 
 }
-body, .dark-mode, .light-mode{
+body, .dark-mode,  .light-mode{
   background-color: var(--bg-color);
   color: var(--text-color);
+}
+.mode-toggle{
+  background-color: #00fc22;
 }
 
 .highlight-card{
@@ -240,19 +243,19 @@ body, .dark-mode, .light-mode{
 /* light theme overrides */
 @media (prefers-color-scheme: light) {
   .app-title {
-    color: #213547;
+    color: #FF8000;
   }
   .app-nav a,
   .dropbtn {
-    color: #213547;
+    color: #0000FF;
   }
   .dropdown-content {
-    background-color: #f9f9f9;
+    background-color: #0000FF;
   }
   .dropdown-content a {
-    color: #213547;
+    color: #dcdddf;
   }
   .dropdown-content a:hover {
-    background-color: #e0e0e0;
+    background-color: #ffffff;
   }
 }

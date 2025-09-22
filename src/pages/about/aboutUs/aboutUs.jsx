@@ -1,4 +1,5 @@
 // src/Pages/Articles/Articles.jsx
+import "./aboutUs.css"
 function Articles() {
   return (
     <div className="articles-page container">

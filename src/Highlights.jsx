@@ -47,6 +47,7 @@ export default function Highlights() {
           </article>
         ))}
       </div>
+      <div className="link"><a href="#">More</a></div>
     </section>
   );
 }

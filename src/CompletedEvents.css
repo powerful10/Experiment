@@ -68,15 +68,16 @@
 /* Button */
 .event-button {
   display: inline-block;
-  background: #646cff;
-  color: rgb(255, 211, 211);
+  background: #8a680b;
+  color: rgb(255, 255, 255);
   padding: 0.55rem 1rem;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
 }
 .event-button:hover {
-  background: #000dff;
+  background: #1E90FF;
+  color: #ff0000f5;
 }
 
 /* Responsive adjustments */
@@ -101,7 +102,7 @@
     color: #00ff40;
   }
   .event-card {
-    background: #000000;
+    background: #a70a0a;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   }
   .event-title {

@@ -19,7 +19,7 @@ import Podcasts from "./pages/economics/podcasts/podcasts.jsx"
 
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true); // default dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false); // default dark mode
   const toggleMode = () => setIsDarkMode((prev) => !prev);
   const [navOpen, setNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);

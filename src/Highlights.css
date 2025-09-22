@@ -70,7 +70,33 @@
   font-weight: 600;
 }
 .highlight-button:hover {
-  background: #000dff;
+  background: #ffffff;
+}
+
+.link {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.link a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #646cff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.link a:hover {
+  background: #ffffff;
+  color: #000;
+  transform: translateY(3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* responsive adjustments */
@@ -92,7 +118,7 @@
 /* light theme overrides */
 @media (prefers-color-scheme: light) {
   .highlights-title {
-    color: #213547;
+    color: #0088ff;
   }
   .highlight-card {
     background: #464646;
@@ -102,6 +128,6 @@
     color: #81c4ff;
   }
   .highlight-text {
-    color: #b6a1a1;
+    color: #66ff00;
   }
 }
