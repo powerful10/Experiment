@@ -18,9 +18,6 @@ import Opportunities from "./pages/economics/opportunities/opportunities.jsx";
 import Podcasts from "./pages/economics/podcasts/podcasts.jsx";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleMode = () => setIsDarkMode((prev) => !prev);
-
   const [navOpen, setNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [economicsOpen, setEconomicsOpen] = useState(false);
@@ -51,7 +48,7 @@ function App() {
 
   return (
     <Router>
-      <div className={isDarkMode ? "dark-mode" : "light-mode"}>
+      <div>
         <header className="app-header container">
           <div className="left-section">
             <img src={logo} alt="APonomics Logo" className="app-logo" />
@@ -125,9 +122,7 @@ function App() {
             </div>
           </nav>
 
-          <button onClick={toggleMode} className="mode-toggle">
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+          
         </header>
 
         {/* Routes */}

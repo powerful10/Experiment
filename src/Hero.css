@@ -28,7 +28,6 @@
   line-height: 1.6;
 }
 
-/* ✅ Responsive text scaling */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;

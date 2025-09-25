@@ -30,7 +30,6 @@
   transform: scale(1.1);
 }
 
-/* ✅ fixed: was black text on dark bg */
 .footer-copyright {
   font-size: 0.9rem;
   color: #fff;

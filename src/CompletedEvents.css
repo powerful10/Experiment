@@ -1,13 +1,12 @@
 .completed-events {
   padding: 3rem 0;
-  color: #ffffff;
 }
 
 .events-title {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Grid layout */
@@ -19,10 +18,10 @@
 
 /* Card */
 .event-card {
-  background: #f0efef;
+  background: #979797;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(83, 81, 81, 0.35);
+  box-shadow: 0 6px 20px rgba(39, 39, 39, 0.35);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -30,7 +29,7 @@
 
 .event-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(94, 92, 92, 0.45);
+  box-shadow: 0 10px 28px rgba(51, 51, 51, 0.45);
 }
 
 /* Image */
@@ -43,41 +42,41 @@
 /* Content */
 .event-content {
   padding: 1rem 1rem 1.25rem;
-  color: #7e7b7b;
+  color: #000000;
   flex: 1;
 }
 
 .event-title {
   font-size: 1.1rem;
-  color: #ff0000;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .event-desc {
   font-size: 0.95rem;
-  color: #ff0000;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .event-info {
   font-size: 0.9rem;
-  color: #ff0000;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 /* Button */
 .event-button {
   display: inline-block;
-  background: #8a680b;
-  color: rgb(255, 255, 255);
+  background: #ffffff;
+  color: rgb(0, 0, 0);
   padding: 0.55rem 1rem;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
 }
 .event-button:hover {
-  background: #1E90FF;
-  color: #ff0000f5;
+  background: #000000;
+  color: #fffefef5;
 }
 
 /* Responsive adjustments */
@@ -93,25 +92,5 @@
   }
   .event-image {
     height: 160px;
-  }
-}
-
-/* Light theme overrides */
-@media (prefers-color-scheme: light) {
-  .events-title {
-    color: #00ff40;
-  }
-  .event-card {
-    background: #a70a0a;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  }
-  .event-title {
-    color: #0088ff;
-  }
-  .event-desc {
-    color: #dad996;
-  }
-  .event-info {
-    color: #00ff15;
   }
 }

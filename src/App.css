@@ -1,26 +1,4 @@
 /* App.css - header & navigation styles (dark theme by default) */
-:root {
-  --bg-color : #1a1a1a;
-  --text-color : #fff;
-  --card-bg : #ffffff;
-  --button-bg: #646cff;
-  --button-text: #fff; 
-}
-.light-mode {
-  --bg-color : #f9f9f9;
-  --text-color : #ffffff;
-  --card-bg : #000000;
-  --button-bg: #ffffff;
-  --button-text: #fff; 
-}
-body, .dark-mode,  .light-mode{
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-.mode-toggle{
-  background-color: #00fc22;
-}
-
 .highlight-card{
   background-color: var(--card-bg);
 }
