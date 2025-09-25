@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <HashRouter>
       <div className={isDarkMode ? "dark-mode" : "light-mode"}>
         <header className="app-header container">
           <div className="left-section">
@@ -166,7 +166,7 @@ function App() {
 
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
