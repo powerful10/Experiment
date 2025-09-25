@@ -1,6 +1,6 @@
 // src/App.jsx
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import logo from "./assets/logo.jpg"; // keep your logo path
 import "./App.css";
 import Hero from "./Hero.jsx";
@@ -9,18 +9,18 @@ import CompletedEvents from "./CompletedEvents.jsx";
 import Volunteering from "./Volunteering.jsx";
 import Footer from "./Footer.jsx";
 import ScrollButton from "./ScrollToTopButton.jsx";
-import Articles from "./pages/articles/articles.jsx"; // <-- import Articles page
-import AboutUs from "./pages/about/aboutUs/aboutUs.jsx"
-import OurTeam from "./pages/about/ourTeam/ourTeam.jsx"
-import ConceptCovers from "./pages/economics/conceptCovers/conceptCovers.jsx"
-import Notebook from "./pages/economics/notebook/notebook.jsx"
-import Opportunities from "./pages/economics/opportunities/opportunities.jsx"
-import Podcasts from "./pages/economics/podcasts/podcasts.jsx"
-
+import Articles from "./pages/articles/articles.jsx"; 
+import AboutUs from "./pages/about/aboutUs/aboutUs.jsx";
+import OurTeam from "./pages/about/ourTeam/ourTeam.jsx";
+import ConceptCovers from "./pages/economics/conceptCovers/conceptCovers.jsx";
+import Notebook from "./pages/economics/notebook/notebook.jsx";
+import Opportunities from "./pages/economics/opportunities/opportunities.jsx";
+import Podcasts from "./pages/economics/podcasts/podcasts.jsx";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false); // default dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleMode = () => setIsDarkMode((prev) => !prev);
+
   const [navOpen, setNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [economicsOpen, setEconomicsOpen] = useState(false);
@@ -34,7 +34,7 @@ function App() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // if we switch to desktop, ensure mobile-only open states are cleared
+  // reset dropdowns on desktop
   useEffect(() => {
     if (!isMobile) {
       setEconomicsOpen(false);
@@ -104,7 +104,6 @@ function App() {
             <Link onClick={closeNav} to="/articles">
               Articles
             </Link>
-            
 
             {/* About dropdown */}
             <div className={`dropdown ${isMobile && aboutOpen ? "open" : ""}`}>
@@ -125,6 +124,7 @@ function App() {
               </div>
             </div>
           </nav>
+
           <button onClick={toggleMode} className="mode-toggle">
             {isDarkMode ? "Light Mode" : "Dark Mode"}
           </button>
@@ -144,24 +144,14 @@ function App() {
               </>
             }
           />
-          {/* Routes */}
 
           <Route path="/articles" element={<Articles />} />
-
           <Route path="/about/aboutUs" element={<AboutUs />} />
-
-          <Route path="/about/ourTeam" element={<OurTeam />} /> 
-
+          <Route path="/about/ourTeam" element={<OurTeam />} />
           <Route path="/economics/conceptCovers" element={<ConceptCovers />} />
-
-          <Route path="/economics/notebook" element={<Notebook />}/>
-
-          <Route path="/economics/opportunities" element={<Opportunities />}/>
-
-          <Route path="/economics/podcasts" element={<Podcasts />}/>
-
-          
-          {/* Routes */}
+          <Route path="/economics/notebook" element={<Notebook />} />
+          <Route path="/economics/opportunities" element={<Opportunities />} />
+          <Route path="/economics/podcasts" element={<Podcasts />} />
         </Routes>
 
         <Footer />
