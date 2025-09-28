@@ -1,52 +1,52 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import "./ConceptCovers.css";
 
-// ✅ Import all images
-import BehavioralImg from "../../assets/CCImages/image-asset.webp";
-import PpcImg from "../../assets/CCImages/production-possibility-curve.webp";
-import ScaleImg from "../../assets/CCImages/economies-of-scale.webp";
-import ElasticityImg from "../../assets/CCImages/price-elasticity-of-demand.webp";
-import ExternalitiesImg from "../../assets/CCImages/externalities.webp";
-import AsymmetricImg from "../../assets/CCImages/asymmetric-information.webp";
-import EnvEcoImg from "../../assets/CCImages/environmental-economics.webp";
-import PriceDetImg from "../../assets/CCImages/price-determinants.webp";
-import HouseholdImg from "../../assets/CCImages/household-spending-saving.webp";
-import CapitalLabourImg from "../../assets/CCImages/capital-vs-labour.webp";
-import StatementsImg from "../../assets/CCImages/positive-normative-statements.webp";
-import DecisionImg from "../../assets/CCImages/rational-decision.webp";
-import MeritImg from "../../assets/CCImages/merit-goods.webp";
-import CircularFlowImg from "../../assets/CCImages/circular-flow.webp";
-import BusinessTypesImg from "../../assets/CCImages/business-organizations.webp";
-import DemandSupplyImg from "../../assets/CCImages/demand-supply.webp";
-import MergersImg from "../../assets/CCImages/mergers.webp";
-import MonopoliesImg from "../../assets/CCImages/monopolies.webp";
-import BanksImg from "../../assets/CCImages/commercial-banks.webp";
-import UnionsImg from "../../assets/CCImages/trade-unions.webp";
-import BarterImg from "../../assets/CCImages/bartering.webp";
-import SpecializationImg from "../../assets/CCImages/specialization.webp";
-import ProblemImg from "../../assets/CCImages/economic-problem.webp";
-import FactorsImg from "../../assets/CCImages/factors-of-production.webp";
-import OpportunityCostImg from "../../assets/CCImages/opportunity-cost.webp";
+// Microeconomics
+import BehavioralImg from "@assets/CCImages/image-asset.webp";
+import PpcImg from "@assets/CCImages/image-asset.webp";
+import ScaleImg from "@assets/CCImages/image-asset.webp";
+import ElasticityImg from "@assets/CCImages/image-asset.webp";
+import ExternalitiesImg from "@assets/CCImages/image-asset.webp";
+import AsymmetricImg from "@assets/CCImages/image-asset.webp";
+import EnvEcoImg from "@assets/CCImages/image-asset.webp";
+import PriceDetImg from "@assets/CCImages/image-asset.webp";
+import HouseholdImg from "@assets/CCImages/image-asset.webp";
+import CapitalLabourImg from "@assets/CCImages/image-asset.webp";
+import StatementsImg from "@assets/CCImages/image-asset.webp";
+import DecisionImg from "@assets/CCImages/image-asset.webp";
+import MeritImg from "@assets/CCImages/image-asset.webp";
+import CircularFlowImg from "@assets/CCImages/image-asset.webp";
+import BusinessTypesImg from "@assets/CCImages/image-asset.webp";
+import DemandSupplyImg from "@assets/CCImages/image-asset.webp";
+import MergersImg from "@assets/CCImages/image-asset.webp";
+import MonopoliesImg from "@assets/CCImages/image-asset.webp";
+import BanksImg from "@assets/CCImages/image-asset.webp";
+import UnionsImg from "@assets/CCImages/image-asset.webp";
+import BarterImg from "@assets/CCImages/image-asset.webp";
+import SpecializationImg from "@assets/CCImages/image-asset.webp";
+import ProblemImg from "@assets/CCImages/image-asset.webp";
+import FactorsImg from "@assets/CCImages/image-asset.webp";
+import OpportunityCostImg from "@assets/CCImages/image-asset.webp";
 
 // Macroeconomics
-import GlobalisationImg from "../../assets/CCImages/globalisation.webp";
-import BusinessCycleImg from "../../assets/CCImages/business-cycle.webp";
-import PhillipsImg from "../../assets/CCImages/phillips-curve.webp";
-import InterventionImg from "../../assets/CCImages/government-intervention.webp";
-import GrowthImg from "../../assets/CCImages/economic-growth.webp";
-import PovertyImg from "../../assets/CCImages/poverty.webp";
-import SpecializationNationalImg from "../../assets/CCImages/national-specialization.webp";
-import ForexImg from "../../assets/CCImages/foreign-exchange-rates.webp";
-import InflationImg from "../../assets/CCImages/inflation-deflation.webp";
-import BalanceImg from "../../assets/CCImages/balance-of-payments.webp";
-import ADASImg from "../../assets/CCImages/aggregate-demand-supply.webp";
-import DevelopmentImg from "../../assets/CCImages/development-economies.webp";
-import SupplySideImg from "../../assets/CCImages/supply-side-policy.webp";
-import CentralBanksImg from "../../assets/CCImages/central-banks.webp";
-import MonetaryImg from "../../assets/CCImages/monetary-policy.webp";
-import FiscalImg from "../../assets/CCImages/fiscal-policy.webp";
-import TypesEconomiesImg from "../../assets/CCImages/types-of-economies.webp";
-import TradeImg from "../../assets/CCImages/international-trade.webp";
+import GlobalisationImg from "@assets/CCImages/image-asset.webp";
+import BusinessCycleImg from "@assets/CCImages/image-asset.webp";
+import PhillipsImg from "@assets/CCImages/image-asset.webp";
+import InterventionImg from "@assets/CCImages/image-asset.webp";
+import GrowthImg from "@assets/CCImages/image-asset.webp";
+import PovertyImg from "@assets/CCImages/image-asset.webp";
+import SpecializationNationalImg from "@assets/CCImages/image-asset.webp";
+import ForexImg from "@assets/CCImages/image-asset.webp";
+import InflationImg from "@assets/CCImages/image-asset.webp";
+import BalanceImg from "@assets/CCImages/image-asset.webp";
+import ADASImg from "@assets/CCImages/image-asset.webp";
+import DevelopmentImg from "@assets/CCImages/image-asset.webp";
+import SupplySideImg from "@assets/CCImages/image-asset.webp";
+import CentralBanksImg from "@assets/CCImages/image-asset.webp";
+import MonetaryImg from "@assets/CCImages/image-asset.webp";
+import FiscalImg from "@assets/CCImages/image-asset.webp";
+import TypesEconomiesImg from "@assets/CCImages/image-asset.webp";
+import TradeImg from "@assets/CCImages/image-asset.webp";
 
 // ✅ Map concept → image
 const imageMap = {
@@ -188,8 +188,8 @@ export default function ConceptCovers() {
 
     const el = containerRef.current;
     if (!el) return;
-    el.querySelectorAll(".card").forEach((card) => observer.observe(card));
 
+    el.querySelectorAll(".card").forEach((card) => observer.observe(card));
     return () => observer.disconnect();
   }, []);
 
@@ -206,11 +206,14 @@ export default function ConceptCovers() {
   const microFiltered = filtered.filter((c) => c.section === "Microeconomics");
   const macroFiltered = filtered.filter((c) => c.section === "Macroeconomics");
 
+  // ✅ helper: apply single-card-grid only when total == 1
+  const gridClass = (list) =>
+    `card-grid ${list.length === 1 && filtered.length === 1 ? "single-card-grid" : ""}`;
+
   return (
     <div className="ap-container">
       <header className="ap-header">
         <h1>APonomics — Concept Covers</h1>
-
         <div className="search-wrap">
           <input
             className="search-input"
@@ -227,7 +230,7 @@ export default function ConceptCovers() {
       <main ref={containerRef} className="ap-main">
         <section className="section">
           <h2>Microeconomics</h2>
-          <div className="card-grid">
+          <div className={gridClass(microFiltered)}>
             {microFiltered.map((card) => (
               <article
                 key={card.id}
@@ -251,7 +254,7 @@ export default function ConceptCovers() {
 
         <section className="section">
           <h2>Macroeconomics</h2>
-          <div className="card-grid">
+          <div className={gridClass(macroFiltered)}>
             {macroFiltered.map((card) => (
               <article
                 key={card.id}
