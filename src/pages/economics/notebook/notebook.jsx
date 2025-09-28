@@ -1,7 +1,7 @@
 // src/Notebook.jsx
 import React from "react";
 import "./Notebook.css";
-import bgImage from "../../../assets/photo_2025-09-27_08-49-01.jpg"; // put your image in src/ and name it notebook.jpg
+import bgImage from "@assets/photo_2025-09-27_08-49-01.jpg"; // put your image in src/ and name it notebook.jpg
 
 export default function Notebook() {
   return (
