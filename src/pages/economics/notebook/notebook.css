@@ -1,7 +1,7 @@
 /* src/Notebook.css */
 :root{
-  --left-bg: #f6efe7;
-  --accent: #c8a57a;
+  --left-bg: #ffd900;
+  --accent: #000000;
   --text: #111;
   --gap: clamp(20px, 3vw, 60px);
   --max-width: 1200px;
@@ -52,7 +52,7 @@ html,body,#root{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'
 }
 
 .sub{
-  color:#6b6b6b;
+  color:#080c49;
   margin:0 0 28px 0;
   max-width:60ch;
 }
@@ -65,6 +65,10 @@ html,body,#root{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'
   color:#fff;
   text-decoration:none;
   font-weight:600;
+}
+.cta:hover{
+  background-color: #fff;
+  color: #000000;
 }
 
 /* RIGHT (background image) */
