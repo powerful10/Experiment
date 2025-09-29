@@ -17,7 +17,7 @@ export default function Notebook() {
             printable-friendly, quick to scan.
           </p>
 
-          <a className="cta" href="#read">
+          <a  className="cta" href=" /Experiment/files/AS+Microeconomics+Notes.pdf " target="_blank" rel="noopener noreferrer">
             Read the Notebook
           </a>
         </div>
