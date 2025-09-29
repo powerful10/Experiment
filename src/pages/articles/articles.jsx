@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import Image1 from "../assets/images/article1.jpg";
-import Image2 from "../assets/images/article2.jpg";
-import Image3 from "../assets/images/article3.jpg";
+import Image1 from "../assets/image.jpg";
+import Image2 from "../assets/download.png";
+import Image3 from "../assets/download.jpg";
 import "./Articles.css";
 
 const Articles = () => {
