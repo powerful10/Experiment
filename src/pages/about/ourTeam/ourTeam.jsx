@@ -8,21 +8,21 @@ import Member3 from "@assets/member3.jpg";
 const Team = () => {
   const team = [
     {
-      name: "Oybek",
-      role: "Frontend Developer",
-      bio: "Passionate about clean design and smooth user experiences, building the APonomics interface.",
+      name: "1st member",
+      role: "who?",
+      bio: "bio?",
       img: Member1,
     },
     {
-      name: "Friend’s Name",
-      role: "Backend Developer",
-      bio: "Focused on building APIs, databases, and making sure APonomics runs smoothly under the hood.",
+      name: "2nd member",
+      role: "who?",
+      bio: "bio?",
       img: Member2,
     },
     {
-      name: "Advisor / Mentor",
-      role: "Project Guide",
-      bio: "Providing direction, feedback, and ensuring the team stays aligned with the project vision.",
+      name: "3rd member",
+      role: "who?",
+      bio: "bio?",
       img: Member3,
     },
   ];

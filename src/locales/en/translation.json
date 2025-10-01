@@ -1,0 +1,49 @@
+{
+  "navbar":{
+    "1nd":"Home",
+    "2nd":"Economics",
+    "2nd_1st":"Concept Covers",
+    "2nd_2nd":"Notebook",
+    "2nd_3rd":"Opportunities",
+    "2nd_4th":"Podcasts",
+    "3rd":"Articles",
+    "4th":"About",
+    "4th_1st":"About Us",
+    "4th_2nd":"Our Team"
+  },
+  "hero":{
+    "title":"Welcome to APonomics!",
+    "subtitle":"Economics is not just a subject — it’s the language of decision-making in our world. At APonomics, we simplify complex ideas, highlight keyconcepts, and guide you step by step to succeed in AP Economics while preparing you for bigger opportunities ahead."
+  },
+  "articles":{
+    "title":"Articles",
+    "subtitle":"Explore key topics and study resources",
+    "id": "supply-demand",
+    "cardTitle": "Supply & Demand Basics",
+    "description":"A clear primer on how markets find prices and quantities — essential for APonomics learners.",
+    "btn":"Read More"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "The story behind APonomics",
+    "p1": "Welcome to APonomics, a platform built by students, for students.",
+    "p2": "Our mission is to make economics easier, clearer, and more engaging.",
+    "p3": "We started this project because we believe economics should be a tool to understand the world."
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "The people behind APonomics",
+    "1st_member": "1st member",
+    "2nd_member": "2nd member",
+    "3rd_member": "3rd member",
+    "name_1":"who?",
+    "name_2":"who?",
+    "name_3":"who?",
+    "bio_1":"bio",
+    "bio_2":"bio",
+    "bio_3":"bio"
+  },
+  "footer":{
+    "rights": "All rights reserved."
+}
+}

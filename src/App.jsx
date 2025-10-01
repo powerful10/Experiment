@@ -15,9 +15,10 @@ import ConceptCovers from "./pages/economics/conceptCovers/conceptCovers.jsx";
 import Notebook from "./pages/economics/notebook/notebook.jsx";
 import Opportunities from "./pages/economics/opportunities/opportunities.jsx";
 import Podcasts from "./pages/economics/podcasts/podcasts.jsx";
-import Image1 from "..//src/assets/download.jpg"
-import Image2 from "..//src/assets/image.jpg"
-import Image3 from "..//src/assets/download.png"
+import ArticlesPage from "./pages/articles/articlesPage.jsx"
+// import Image1 from "..//src/assets/download.jpg"
+// import Image2 from "..//src/assets/image.jpg"
+// import Image3 from "..//src/assets/download.png"
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -132,80 +133,7 @@ function App() {
             element={
               <>
                 <Hero />
-
-                {/* === Articles Section inserted here === */}
-    <section className="articles-preview container">
-  <h2 className="articles-title">Articles</h2>
-  <h3 className="featured-title">Featured Articles</h3>
-
-  <div className="articles-grid">
-    <div className="article-box">
-      <img
-        src = {Image1}
-        alt="Supply & Demand"
-        className="article-img"
-      />
-      <h3>Supply & Demand Basics</h3>
-      <p>
-        A clear primer on how markets find prices and quantities —
-        essential for APonomics learners.
-      </p>
-      <Link
-        to="/articles?focus=supply-demand"
-        className="article-btn"
-      >
-        Read More
-      </Link>
-    </div>
-
-    <div className="article-box">
-      <img
-        src={Image2}
-        alt="Global Trade"
-        className="article-img"
-      />
-      <h3>Global Trade Simplified</h3>
-      <p>
-        Short, real-world cases that show how trade shapes economies
-        and creates opportunities.
-      </p>
-      <Link
-        to="/articles?focus=global-trade"
-        className="article-btn"
-      >
-        Read More
-      </Link>
-    </div>
-
-    <div className="article-box">
-      <img
-        src={Image3}
-        alt="Exam Strategies"
-        className="article-img"
-      />
-      <h3>Exam Strategies</h3>
-      <p>
-        Practical tips to help students prepare and perform confidently
-        on economics exams.
-      </p>
-      <Link
-        to="/articles?focus=exam-strategies"
-        className="article-btn"
-      >
-        Read More
-      </Link>
-    </div>
-  </div>
-
-  <div className="articles-more">
-    <Link to="/articles" className="article-btn">
-      More
-    </Link>
-  </div>
-    </section>
-
-                {/* === End Articles Section === */}
-
+                <Articles />
                 <CompletedEvents />
                 <Volunteering />
                 <ScrollButton />
@@ -213,7 +141,7 @@ function App() {
             }
           />
 
-          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/about/aboutUs" element={<AboutUs />} />
           <Route path="/about/ourTeam" element={<OurTeam />} />
           <Route path="/economics/conceptCovers" element={<ConceptCovers />} />

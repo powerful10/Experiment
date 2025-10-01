@@ -8,12 +8,13 @@
 .page-title {
   font-size: 2rem;
   margin-bottom: 0.25rem;
-  text-align: left;
+  text-align: center;
 }
 
 .page-sub {
   color: #666;
   margin-bottom: 1.25rem;
+  text-align: center;
 }
 
 .articles-grid {
@@ -69,7 +70,10 @@
   font-size: 0.95rem;
   flex-grow: 1;
 }
-
+.articles-footer{
+  text-align: center;
+  padding: 20px;
+}
 .article-btn {
   padding: 0.45rem 0.9rem;
   background: #0b5fff;
