@@ -1,31 +1,32 @@
-// src/Pages/Articles/Articles.jsx
-import "./aboutUs.css"
-function Articles() {
+import React from "react";
+import "./aboutUs.css";
+
+const About = () => {
   return (
-    <div className="articles-page container">
-      <h2>Articles</h2>
-      <p>Here you’ll find all APonomics articles.</p>
+    <section className="about-page">
+      <h2 className="page-title">About Us</h2>
+      <p className="page-sub">The story behind APonomics</p>
 
-      {/* Example structure */}
-      <div className="article-card">
-        <h3>Sample Article 1</h3>
+      <div className="about-content">
         <p>
-          This is a preview of the first article. Click below to read the full
-          text.
+          Welcome to <strong>APonomics</strong>, a platform built by students,
+          for students. Our mission is to make economics easier, clearer, and
+          more engaging for learners everywhere.
         </p>
-        <button>Read More</button>
-      </div>
-
-      <div className="article-card">
-        <h3>Sample Article 2</h3>
         <p>
-          Another article preview goes here. Later you can link these to detail
-          pages.
+          We started this project because we believe economics should not feel
+          like a barrier but rather a tool to understand the world. From supply
+          and demand to global trade, our articles and resources break down
+          concepts into simple, practical insights.
         </p>
-        <button>Read More</button>
+        <p>
+          Our long-term goal is to grow APonomics into a supportive community of
+          learners, where students can prepare for exams, explore real-world
+          cases, and share knowledge freely.
+        </p>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
-export default Articles;
+export default About;

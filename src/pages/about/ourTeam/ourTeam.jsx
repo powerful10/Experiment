@@ -1,30 +1,49 @@
-// src/Pages/Articles/Articles.jsx
-function Articles() {
+import React from "react";
+import "./team.css";
+
+import Member1 from "@assets/member1.jpg";
+import Member2 from "@assets/member2.jpg";
+import Member3 from "@assets/member3.jpg";
+
+const Team = () => {
+  const team = [
+    {
+      name: "Oybek",
+      role: "Frontend Developer",
+      bio: "Passionate about clean design and smooth user experiences, building the APonomics interface.",
+      img: Member1,
+    },
+    {
+      name: "Friend’s Name",
+      role: "Backend Developer",
+      bio: "Focused on building APIs, databases, and making sure APonomics runs smoothly under the hood.",
+      img: Member2,
+    },
+    {
+      name: "Advisor / Mentor",
+      role: "Project Guide",
+      bio: "Providing direction, feedback, and ensuring the team stays aligned with the project vision.",
+      img: Member3,
+    },
+  ];
+
   return (
-    <div className="articles-page container">
-      <h2>Articles</h2>
-      <p>Here you’ll find all APonomics articles.</p>
+    <section className="team-page">
+      <h2 className="page-title">Our Team</h2>
+      <p className="page-sub">The people behind APonomics</p>
 
-      {/* Example structure */}
-      <div className="article-card">
-        <h3>Sample Article 1</h3>
-        <p>
-          This is a preview of the first article. Click below to read the full
-          text.
-        </p>
-        <button>Read More</button>
+      <div className="team-grid">
+        {team.map((member, index) => (
+          <div key={index} className="team-card">
+            <img src={member.img} alt={member.name} className="team-img" />
+            <h3 className="team-name">{member.name}</h3>
+            <p className="team-role">{member.role}</p>
+            <p className="team-bio">{member.bio}</p>
+          </div>
+        ))}
       </div>
-
-      <div className="article-card">
-        <h3>Sample Article 2</h3>
-        <p>
-          Another article preview goes here. Later you can link these to detail
-          pages.
-        </p>
-        <button>Read More</button>
-      </div>
-    </div>
+    </section>
   );
-}
+};
 
-export default Articles;
+export default Team;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import Image1 from "../assets/image.jpg";
-import Image2 from "../assets/logo.jpg";
-import Image3 from "../assets/download.jpg";
-import "./Articles.css";
+import Image1 from "@assets/image.jpg";
+import Image2 from "@assets/notebookPhoto.jpg";
+import Image3 from "@assets/download.jpg";
+import "./article.css";
 
 const Articles = () => {
   const location = useLocation();
@@ -38,23 +38,24 @@ const Articles = () => {
   ];
 
   return (
-    <section className="articles-page container">
-      <h2 className="articles-title">Articles</h2>
+    <section className="articles-page">
+      <h2 className="page-title">Articles</h2>
+      <p className="page-sub">Explore key topics and study resources</p>
 
       <div className="articles-grid">
         {articles.map((article) => (
           <div
             key={article.id}
-            className={`article-card ${
-              focus === article.id ? "highlight" : ""
-            }`}
+            className={`article-card ${focus === article.id ? "highlight" : ""}`}
           >
             <img src={article.img} alt={article.title} className="article-img" />
+
             <div className="article-content">
-              <h3 className="article-card-title">{article.title}</h3>
-              <p className="article-card-text">{article.description}</p>
+              <h3 className="article-title">{article.title}</h3>
+              <p className="article-text">{article.description}</p>
+
               <Link to={article.link} className="article-btn">
-                Read More
+                Read More →
               </Link>
             </div>
           </div>

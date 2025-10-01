@@ -1,5 +1,3 @@
-/* src/pages/articles/articles.css */
-
 .articles-page {
   padding: 2rem 1rem;
   max-width: 1100px;
@@ -24,12 +22,15 @@
   gap: 1rem;
 }
 
+/* ---- Card ---- */
 .article-card {
   background: var(--card-bg, #fff);
   border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+  overflow: hidden; /* ensures image corners follow card rounding */
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
   transition: transform 160ms ease, box-shadow 160ms ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .article-card:hover {
@@ -37,29 +38,39 @@
 }
 
 .article-card.highlight {
-  outline: 3px solid rgba(99,102,241,0.15);
-  box-shadow: 0 10px 30px rgba(99,102,241,0.08);
+  outline: 3px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08);
 }
 
-.article-head h2 {
+/* ---- Image ---- */
+.article-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Content ---- */
+.article-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-title {
   margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.article-excerpt {
-  margin: 0 0 0.75rem 0;
+.article-text {
+  margin: 0 0 1rem 0;
   color: #444;
   font-size: 0.95rem;
+  flex-grow: 1;
 }
 
-.article-actions {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  margin-bottom: 0.6rem;
-}
-
-.read-btn {
+.article-btn {
   padding: 0.45rem 0.9rem;
   background: #0b5fff;
   color: #fff;
@@ -67,31 +78,15 @@
   border: none;
   cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
+  text-align: center;
 }
 
-.read-btn:hover {
+.article-btn:hover {
   opacity: 0.95;
 }
 
-.link-to-article {
-  font-size: 0.85rem;
-  color: #666;
-  text-decoration: none;
-  padding: 0.45rem 0.6rem;
-  border-radius: 6px;
-  background: transparent;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-.article-full {
-  margin-top: 0.8rem;
-  color: #222;
-  line-height: 1.6;
-  border-top: 1px dashed rgba(0,0,0,0.06);
-  padding-top: 0.8rem;
-}
-
-/* responsive tweaks */
+/* ---- Responsive ---- */
 @media (max-width: 640px) {
   .articles-grid {
     grid-template-columns: 1fr;
