@@ -7,13 +7,19 @@
   background-color: var(--card-bg);
   color: var(--button-text);
 }
+
+/* ===== HEADER & NAVBAR ===== */
 .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem 0;
-  position: relative;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb, #1d4ed8);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
 .left-section {
@@ -24,15 +30,17 @@
 
 .app-logo {
   width: 52px;
-  height: auto;
+  height: 52px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #fff;
 }
 
 .app-title {
   font-size: 1.6rem;
   color: #ffffff;
   letter-spacing: 0.2px;
+  font-weight: 600;
 }
 
 /* nav */
@@ -45,17 +53,20 @@
 }
 
 .app-nav a {
-  color: #001aff;
+  color: #f1f5f9;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.35rem 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
 .app-nav a:hover {
-  color: #019c01;
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
 }
 
-/* dropdown wrapper - contains both button and submenu (so hover stays while moving into submenu) */
+/* dropdown wrapper - contains both button and submenu */
 .dropdown {
   position: relative;
 }
@@ -64,12 +75,19 @@
 .dropbtn {
   background: none;
   border: none;
-  color: #001aff;
+  color: #f1f5f9;
   font-weight: 500;
   cursor: pointer;
-  padding: 0.35rem 0.5rem;
+  padding: 0.4rem 0.6rem;
   display: inline-flex;
   align-items: center;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.dropbtn:hover {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
 }
 
 /* arrow element */
@@ -79,7 +97,6 @@
   transition: transform 0.18s ease;
 }
 
-/* we render a glyph via pseudo-element */
 .dropbtn .arrow::before {
   content: "▾";
   display: inline-block;
@@ -95,9 +112,9 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #487c39;
+  background-color: #ffffff;
   min-width: 180px;
-  box-shadow: 0 8px 20px rgba(48, 44, 44, 0.4);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   border-radius: 8px;
   z-index: 40;
   padding: 0.25rem 0;
@@ -107,14 +124,16 @@
 .dropdown-content a {
   display: block;
   padding: 0.6rem 1rem;
-  color: #000000;
+  color: #1e293b;
   text-align: center;
+  font-weight: 500;
 }
 .dropdown-content a:hover {
-  background-color: #333;
+  background-color: #2563eb;
+  color: #fff;
 }
 
-/* ---- Desktop Hover behavior ---- */
+/* Desktop Hover behavior */
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
   display: block;
@@ -144,7 +163,7 @@
   display: block;
   width: 100%;
   height: 3px;
-  background: #000000;
+  background: #fff;
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
@@ -163,7 +182,7 @@
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
-    color: #000;
+    color: #fff;
   }
 
   .app-nav {
@@ -171,7 +190,7 @@
     position: absolute;
     top: 100%;
     right: 1rem;
-    background: #1a1a1a;
+    background: #1e293b;
     padding: 1rem;
     border-radius: 10px;
     flex-direction: column;
@@ -196,7 +215,7 @@
 
   .app-nav .dropdown-content a {
     padding: 0.5rem 0;
-    color: #000000;
+    color: #f1f5f9;
     text-align: left;
   }
 
@@ -213,8 +232,6 @@
     transform: rotate(180deg);
   }
 }
-
-
 
 /* ====== Articles Section ====== */
 .articles-preview {
@@ -303,4 +320,28 @@
 /* "More" link container */
 .articles-more {
   margin-top: 2.5rem;
+}
+
+/* === LANGUAGE SWITCHER === */
+.select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #f1f5f9;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.select:hover {
+  background: #e0f2fe;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
 }

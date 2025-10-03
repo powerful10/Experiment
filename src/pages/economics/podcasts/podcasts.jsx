@@ -1,35 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./podcasts.css";
 
-const sampleEpisodes = [
-  {
-    id: "1",
-    title: "Episode 01 — Building APonomics",
-    youtubeId: "dQw4w9WgXcQ",
-    description:
-      "We discuss the origins of APonomics, tech stack, and product decisions.",
-    tags: ["tech", "react", "project"],
-  },
-  {
-    id: "2",
-    title: "Episode 02 — Frontend Tips",
-    youtubeId: "9bZkp7q19f0",
-    description:
-      "Fast frontend tips: performance, Vite, and modern patterns.",
-    tags: ["frontend", "vite", "performance"],
-  },
-  {
-    id: "3",
-    title: "Episode 03 — Career Advice",
-    youtubeId: "3JZ_D3ELwOQ",
-    description:
-      "How to prepare university applications and build projects that stand out.",
-    tags: ["career", "university"],
-  },
-];
-
-export default function PodcastGrid({ episodes = sampleEpisodes }) {
+export default function PodcastGrid() {
+  const { t } = useTranslation();
   const [openVideo, setOpenVideo] = useState(null);
+
+  const episodes = t("podcasts.episodes", { returnObjects: true });
 
   function openEpisode(ep) {
     setOpenVideo(ep);
@@ -43,7 +20,7 @@ export default function PodcastGrid({ episodes = sampleEpisodes }) {
 
   return (
     <div className="podcast-wrap">
-      <h2 className="podcast-title">Podcast & Video Episodes</h2>
+      <h2 className="podcast-title">{t("podcasts.title")}</h2>
       <div className="podcast-grid">
         {episodes.map((ep) => (
           <article key={ep.id} className="pod-card">
@@ -55,7 +32,7 @@ export default function PodcastGrid({ episodes = sampleEpisodes }) {
               <img
                 className="thumb-img"
                 loading="lazy"
-                alt={`${ep.title} thumbnail`}
+                alt={t("podcasts.thumbnail_alt_template", { title: ep.title })}
                 src={`https://img.youtube.com/vi/${ep.youtubeId}/hqdefault.jpg`}
                 width="320"
                 height="180"
@@ -69,9 +46,9 @@ export default function PodcastGrid({ episodes = sampleEpisodes }) {
               <h3 className="card-title">{ep.title}</h3>
               <p className="card-desc">{ep.description}</p>
               <div className="tag-row">
-                {ep.tags?.map((t) => (
-                  <span key={t} className="tag">
-                    #{t}
+                {ep.tags?.map((tag) => (
+                  <span key={tag} className="tag">
+                    #{tag}
                   </span>
                 ))}
               </div>
@@ -82,14 +59,14 @@ export default function PodcastGrid({ episodes = sampleEpisodes }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Open on YouTube
+                  {t("podcasts.open_on_youtube")}
                 </a>
                 <button
                   className="mini-play"
                   onClick={() => openEpisode(ep)}
-                  aria-label={`Play ${ep.title}`}
+                  aria-label={t("podcasts.play")}
                 >
-                  Play
+                  {t("podcasts.play")}
                 </button>
               </div>
             </div>

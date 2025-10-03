@@ -1,29 +1,23 @@
 import React from "react";
 import "./aboutUs.css";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t, i18n } = useTranslation();
+  
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
+  
   return (
     <section className="about-page">
-      <h2 className="page-title">About Us</h2>
-      <p className="page-sub">The story behind APonomics</p>
+      <h2 className="page-title">{t("about.title")}</h2>
+        <p>{t("about.subtitle")}</p>
 
       <div className="about-content">
-        <p>
-          Welcome to <strong>APonomics</strong>, a platform built by students,
-          for students. Our mission is to make economics easier, clearer, and
-          more engaging for learners everywhere.
-        </p>
-        <p>
-          We started this project because we believe economics should not feel
-          like a barrier but rather a tool to understand the world. From supply
-          and demand to global trade, our articles and resources break down
-          concepts into simple, practical insights.
-        </p>
-        <p>
-          Our long-term goal is to grow APonomics into a supportive community of
-          learners, where students can prepare for exams, explore real-world
-          cases, and share knowledge freely.
-        </p>
+        <p>{t("about.paragraphs.p1")}</p>
+        <p>{t("about.paragraphs.p2")}</p>
+        <p>{t("about.paragraphs.p3")}</p>
       </div>
     </section>
   );

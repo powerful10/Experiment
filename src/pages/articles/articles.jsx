@@ -3,44 +3,51 @@ import { Link, useLocation } from "react-router-dom";
 import Image1 from "@assets/image.jpg";
 import Image2 from "@assets/notebookPhoto.jpg";
 import "./article.css";
+import { useTranslation } from "react-i18next";
 
 const Articles = () => {
+const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const focus = query.get("focus");
 
+  // Images stay local, text comes from JSON
   const articles = [
     {
       id: "supply-demand",
-      title: "Supply & Demand Basics",
-      description:
-        "A clear primer on how markets find prices and quantities — essential for APonomics learners.",
       img: Image1,
     },
     {
       id: "global-trade",
-      title: "Global Trade Simplified",
-      description:
-        "Short, real-world cases that show how trade shapes economies and creates opportunities.",
       img: Image2,
     },
   ];
 
   return (
     <section className="articles-page">
-      <h2 className="articles-title">Articles</h2>
-      <p className="page-sub">Explore key topics and study resources</p>
+      {/* Translated title & subtitle */}
+      <h2 className="articles-title">{t("articles.component.title")}</h2>
+      <p className="page-sub">{t("articles.component.subtitle")}</p>
 
       <div className="articles-grid">
-        {articles.map((article) => (
+        {articles.map((article, index) => (
           <div
             key={article.id}
             className={`article-card ${focus === article.id ? "highlight" : ""}`}
           >
-            <img src={article.img} alt={article.title} className="article-img" />
+            <img src={article.img} alt={t(`articles.component.items.${index}.title`)} className="article-img" />
             <div className="article-content">
-              <h3 className="article-title">{article.title}</h3>
-              <p className="article-text">{article.description}</p>
+              <h3 className="article-title">
+                {t(`articles.component.items.${index}.title`)}
+              </h3>
+              <p className="article-text">
+                {t(`articles.component.items.${index}.description`)}
+              </p>
             </div>
           </div>
         ))}
@@ -48,7 +55,7 @@ const Articles = () => {
 
       <div className="articles-footer">
         <Link to="/articles" className="article-btn">
-          Read More →
+          {t("articles.component.read_more")}
         </Link>
       </div>
     </section>

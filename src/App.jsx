@@ -1,6 +1,7 @@
 // src/App.jsx
 import { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "./assets/logo.jpg"; // keep your logo path
 import "./App.css";
 import Hero from "./Hero.jsx";
@@ -21,6 +22,13 @@ import ArticlesPage from "./pages/articles/articlesPage.jsx"
 // import Image3 from "..//src/assets/download.png"
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+
   const [navOpen, setNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [economicsOpen, setEconomicsOpen] = useState(false);
@@ -54,10 +62,15 @@ function App() {
       <div>
         <header className="app-header container">
           <div className="left-section">
-            <img src={logo} alt="APonomics Logo" className="app-logo" />
-            <h1 className="app-title">APonomics</h1>
+            <img src={logo} alt={t("app.logoAlt")} className="app-logo" />
+            <h1 className="app-title">{t("app.title")}</h1>
           </div>
-
+          <select className="select" onChange={(e) =>
+            changeLanguage(e.target.value)}>
+              <option value="en">en</option>
+              <option value="uz">uz</option>
+              <option value="ru">ru</option>
+            </select>
           {/* hamburger button */}
           <button
             className={`hamburger ${navOpen ? "active" : ""}`}
@@ -72,7 +85,7 @@ function App() {
           {/* navigation */}
           <nav className={`app-nav ${navOpen ? "open" : ""}`}>
             <Link onClick={closeNav} to="/">
-              Home
+              {t("app.nav.home")}
             </Link>
 
             {/* Economics dropdown */}
@@ -82,27 +95,27 @@ function App() {
                 onClick={() => isMobile && setEconomicsOpen((s) => !s)}
                 aria-expanded={isMobile ? !!economicsOpen : undefined}
               >
-                Economics <span className="arrow" aria-hidden="true" />
+                {t("app.nav.economics")} <span className="arrow" aria-hidden="true" />
               </button>
 
               <div className="dropdown-content" role="menu">
                 <Link onClick={closeNav} to="/economics/conceptCovers">
-                  Concept Covers
+                {t("app.nav.concept_covers")} 
                 </Link>
                 <Link onClick={closeNav} to="/economics/notebook">
-                  Notebook
+                  {t("app.nav.notebook")}
                 </Link>
                 <Link onClick={closeNav} to="/economics/opportunities">
-                  Opportunities
+                  {t("app.nav.opportunities")}
                 </Link>
                 <Link onClick={closeNav} to="/economics/podcasts">
-                  Podcasts
+                  {t("app.nav.podcasts")}
                 </Link>
               </div>
             </div>
 
             <Link onClick={closeNav} to="/articles">
-              Articles
+              {t("app.nav.articles")}
             </Link>
 
             {/* About dropdown */}
@@ -112,14 +125,14 @@ function App() {
                 onClick={() => isMobile && setAboutOpen((s) => !s)}
                 aria-expanded={isMobile ? !!aboutOpen : undefined}
               >
-                About <span className="arrow" aria-hidden="true" />
+                {t("app.nav.about")} <span className="arrow" aria-hidden="true" />
               </button>
               <div className="dropdown-content" role="menu">
                 <Link onClick={closeNav} to="/about/aboutUs">
-                  About Us
+                  {t("app.nav.about_us")}
                 </Link>
                 <Link onClick={closeNav} to="/about/ourTeam">
-                  Our Team
+                  {t("app.nav.our_team")}
                 </Link>
               </div>
             </div>
