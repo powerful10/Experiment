@@ -17,6 +17,9 @@ import Notebook from "./pages/economics/notebook/notebook.jsx";
 import Opportunities from "./pages/economics/opportunities/opportunities.jsx";
 import Podcasts from "./pages/economics/podcasts/podcasts.jsx";
 import ArticlesPage from "./pages/articles/articlesPage.jsx"
+import SignIn from "./pages/sign/SignIn.jsx";
+import SignUp from "./pages/sign/SignUp.jsx";
+import RecoverPassword from "./pages/sign/RecoverPassword.jsx";
 // import Image1 from "..//src/assets/download.jpg"
 // import Image2 from "..//src/assets/image.jpg"
 // import Image3 from "..//src/assets/download.png"
@@ -65,11 +68,14 @@ function App() {
             <img src={logo} alt={t("app.logoAlt")} className="app-logo" />
             <h1 className="app-title">{t("app.title")}</h1>
           </div>
+      <nav style={{ textAlign: "center", margin: "20px",}}>
+        <Link to="/signin" style={{ marginRight: "20px", color:"white" }}>Sign In</Link>
+        <Link to="/signup" style={{color:"white"}}>Sign Up</Link>
+      </nav>
           <select className="select" onChange={(e) =>
             changeLanguage(e.target.value)}>
               <option value="en">en</option>
               <option value="uz">uz</option>
-              <option value="ru">ru</option>
             </select>
           {/* hamburger button */}
           <button
@@ -153,7 +159,9 @@ function App() {
               </>
             }
           />
-
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} /> 
+          <Route path="/recover" element={<RecoverPassword />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/about/aboutUs" element={<AboutUs />} />
           <Route path="/about/ourTeam" element={<OurTeam />} />
