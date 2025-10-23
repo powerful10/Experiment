@@ -64,3 +64,26 @@
 .auth-links a:hover {
   text-decoration: underline;
 }
+
+/* AUTH WRAPPER – ikkisini yonma-yon yoki ustma-ust joylashtiradi */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* istasangiz kamaytirish mumkin */
+  flex-wrap: wrap; /* bu ham kichik ekranda ishlashga yordam beradi */
+}
+
+/* Kichik ekranlarda ustma-ust chiqsin */
+@media (max-width: 557px) {
+  .auth-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .auth-container {
+    width: 100%;
+    max-width: 350px; /* ixtiyoriy, vizual jihatdan mos */
+  }
+}
