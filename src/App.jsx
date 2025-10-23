@@ -68,10 +68,7 @@ function App() {
             <img src={logo} alt={t("app.logoAlt")} className="app-logo" />
             <h1 className="app-title">{t("app.title")}</h1>
           </div>
-      <nav style={{ textAlign: "center", margin: "20px",}}>
-        <Link to="/signin" style={{ marginRight: "20px", color:"white" }}>Sign In</Link>
-        <Link to="/signup" style={{color:"white"}}>Sign Up</Link>
-      </nav>
+      
           <select className="select" onChange={(e) =>
             changeLanguage(e.target.value)}>
               <option value="en">en</option>
@@ -140,8 +137,11 @@ function App() {
                 <Link onClick={closeNav} to="/about/ourTeam">
                   {t("app.nav.our_team")}
                 </Link>
+                
               </div>
             </div>
+            <Link to="/signin" style={{ marginRight: "20px", color:"white" }}>Sign In</Link>
+            <Link to="/signup" style={{color:"white"}}>Sign Up</Link>
           </nav>
         </header>
 

@@ -46,7 +46,7 @@ export default function SignUp() {
           required
         />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign up</button>
 
         <div className="auth-links">
           <p>
