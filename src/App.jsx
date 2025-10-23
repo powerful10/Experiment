@@ -140,8 +140,8 @@ function App() {
                 
               </div>
             </div>
-            <Link to="/signin" style={{ marginRight: "20px", color:"white" }}>Sign In</Link>
-            <Link to="/signup" style={{color:"white"}}>Sign Up</Link>
+            <Link to="/signin" style={{  color:"white" }}>Sign In</Link>
+            <Link to="/signup" style={{ color:"white"}}>Sign Up</Link>
           </nav>
         </header>
 
